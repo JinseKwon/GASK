@@ -6,6 +6,7 @@ GASK provides an optimized modulation scheme for Ultrasonic indoor localization 
 We have written the example code in matlab R2018b and provide an audio file and an .m file.
 
 ## Modualtion Process
+
 ![](https://github.com/JinseKwon/GASK/blob/master/image/GASK_modulation.png)
 
 Input return to zero(RZ) bits are convolved with a Gaussian filter to create a smooth bit stream.
@@ -24,6 +25,7 @@ s = filter(h,1,bit_raw);
 ```
 
 ## Demodualtion Process
+
 ![](https://github.com/JinseKwon/GASK/blob/master/image/GASK_demodulation.png)
 
 In the demodulation process, the carrier signal is processed by a band pass filter, and then a low pass filter is used to remove noise.
