@@ -1,6 +1,6 @@
-### GASK (Gaussian Amplitude Shift Keying)
+# GASK (Gaussian Amplitude Shift Keying)
 ---
-#### Introduction
+## Introduction
 
 GASK provides an optimized modulation scheme for Ultrasonic indoor localization on mobile devices.
 
@@ -8,7 +8,7 @@ We have written the example code in matlab R2018b and provide an audio file and 
 
 ------
 
-#### Modualtion Process
+## Modualtion Process
 ![](https://github.com/JinseKwon/GASK/tree/master/image/GASK_modulation.png)
 
 Input return to zero(RZ) bits are convolved with a Gaussian filter to create a smooth bit stream.
@@ -28,7 +28,7 @@ s = filter(h,1,bit_raw);
 
 ------
 
-#### Demodualtion Process
+## Demodualtion Process
 ![](https://github.com/JinseKwon/GASK/tree/master/image/GASK_demodulation.png)
 
 In the demodulation process, the carrier signal is processed by a band pass filter, and then a low pass filter is used to remove noise.
@@ -52,5 +52,5 @@ At the end of the GASK demodulation process, the received bits are extracted thr
 
 ------
 
-#### Demonstration
+## Demonstration
 Additional supplementary videos are available for further understanding. <https://youtu.be/tn9yxw23ZNY>
