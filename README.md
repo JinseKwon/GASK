@@ -48,5 +48,4 @@ de_x0 = de_x0./max(de_x0);
 At the end of the GASK demodulation process, the received bits are extracted through the slicer for decion.
 
 ## Demonstration
-Additional supplementary videos are available for further understanding. 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tn9yxw23ZNY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Additional supplementary videos are available for further understanding. <https://youtu.be/tn9yxw23ZNY>
