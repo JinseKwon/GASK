@@ -9,10 +9,10 @@ We have written the example code in matlab R2018b and provide an audio file and 
 ------
 
 #### Modualtion Process
-![](https://github.com/JinseKwon/GASK/tree/master/image/GASK_modulation.png)
+![](https://github.com/JinseKwon/GASK/blob/master/image/GASK_modulation.PNG)
 1. 
 
 ------
 
 #### Demodualtion Process
-![](https://github.com/JinseKwon/GASK/tree/master/image/GASK_demodulation.png)
+![](https://github.com/JinseKwon/GASK/blob/master/image/GASK_demodulation.PNG)
