@@ -18,10 +18,10 @@ fc = 18000;
 
 %% 1. Modulation Process 
 
-bit = [ 0,0,0,1,0,0,1,1,0,1,0,1,1,0,0,1,  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-bit = [0 bit 0]; 
+bit = [0,0,0,0,0,1,0,0,1,1,0,1,0,1,1,0];
+% bit = [0 bit 0]; 
 bit_raw =[];
-percentil = 0
+percentil = 0;
 for i = 1:length(bit)
     bit_raw = [ bit_raw zeros(1,samples_per_bit*percentil) ones(1,samples_per_bit*(1-percentil))*bit(i) zeros(1,samples_per_bit*percentil)];
 end
@@ -40,28 +40,28 @@ figure;
     subplot(3,1,1);
     hold on;
     plot(s);
+    xlim([0,1200]);
     hold off;
     subplot(3,1,2);
     hold on;
     plot(s,'r');
+    xlim([0,1200]);
     hold off;
 
 x = cos(2*pi*fc*t);
 x = x(1:length(s)).*s;
+max_v = max(x);
 
 subplot(3,1,3);
-plot(x,'Color',[0.313725501298904 0.313725501298904 0.313725501298904]);
-ylim([-0.1,0.1]);
-xlim([0,3500]);
+z = x/max_v;
+plot(z,'Color',[0.313725501298904 0.313725501298904 0.313725501298904]);
+ylim([-1,1]);
+xlim([0,1200]);
 
-
-z = x/45;
-waves=z;
-figure;
-plot(z);
-z = z.*0.99;
 % Generate modulated signal 
-filename = 'gask18k_single.wav';
+waves=z;
+z = z.*0.99;
+filename = 'GASK_gen_signal.wav';
 audiowrite(filename,z,SampleRate);
 
 
@@ -72,6 +72,7 @@ audiowrite(filename,z,SampleRate);
 
 % 2.1 Read the modulated signal
 [z,Fs] = audioread('GASK_test_signal.wav');
+figure;
 plot(z);
 % Focusing the region of interesting
 z=z(59500:60524);
@@ -150,5 +151,6 @@ end
 
 subplot(4,1,4)
 stem(subsample(54:64:length(subsample)));
+round(subsample(54:64:length(subsample)),0)
 xlim([0, 18.75])
 xlabel('bit stream');
